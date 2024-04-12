@@ -19,9 +19,4 @@ public interface Person {
      * @param destination место назначения
      */
     void walk(Position destination);
-
-    /**
-     * Сесть в машину
-     */
-    void goToCar(Car car);
 }

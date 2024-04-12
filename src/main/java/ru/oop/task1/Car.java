@@ -9,9 +9,9 @@ package ru.oop.task1;
 public class Car
 {
     /**
-     * Создать машину в заданной точке
+     * Создать машину и посадить в нее человека
      */
-    public Car(Position position)
+    public Car(Person person)
     {
     }
 
