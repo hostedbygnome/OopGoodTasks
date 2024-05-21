@@ -28,7 +28,7 @@ public class MainTask2 {
     public static void moveTo(Person person, Transport transport, Position destination)
     {
         person.walk(transport.getPosition());
-        person.goToTransport(transport);
+        transport.putPerson(person);
         transport.goTo(destination);
         person.walk(destination);
         assert person.getPosition() == destination;
