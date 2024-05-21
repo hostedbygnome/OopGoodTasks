@@ -26,20 +26,15 @@ public class MainTask3 {
      */
     public static void moveTo(Person person, List<Transport> vehicles, Position destination)
     {
-        for (int i = 0; i < vehicles.size(); i++)
+        Transport currentTransport = vehicles.getFirst();
+        for (int i = 1; i < vehicles.size(); i++)
         {
-            Transport currentRequiredTransport = vehicles.get(i);
-            person.walk(currentRequiredTransport.getPosition());
-            person.goToTransport(currentRequiredTransport);
-            if (i + 1 != vehicles.size()) // если есть пересадка — нужно двигаться к следующему транспорту
-            {
-                currentRequiredTransport.goTo(vehicles.get(i + 1).getPosition());
-            }
-            else
-            {
-                currentRequiredTransport.goTo(destination);
-            }
+            person.walk(currentTransport.getPosition());
+            currentTransport.putPerson(person);
+            currentTransport.goTo(vehicles.get(i).getPosition());
+            currentTransport = vehicles.get(i);
         }
+        currentTransport.goTo(destination);
         person.walk(destination);
         assert person.getPosition() == destination;
     }

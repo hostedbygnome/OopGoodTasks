@@ -8,6 +8,13 @@ package ru.oop.task3;
  */
 public abstract class Transport implements Positioned
 {
+    /**
+     * Посадить человека в транспорт
+     */
+    void putPerson(Person person)
+    {
+    }
+
     @Override
     public Position getPosition()
     {
